@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.card-props{
+  height: 23rem;
+}
+
+.button-props{
+  margin-top: 1em;
+  height: 3em;
+  width: 8em;
+}
+
+.space-text{
+  margin-top: 0.5em;
+}
+
+.third-text{
+  margin-top: -1em;
+}
+
+.title-line{
+  border-top: 10px solid #8c8b8b;
+}
