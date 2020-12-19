@@ -137,8 +137,7 @@ class App extends Component {
           >
           </a>
           {content}
-        </header>  
-          
+        </header>
       </div>
     );
   
