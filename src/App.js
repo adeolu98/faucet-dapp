@@ -42,7 +42,7 @@ class App extends Component {
 
     } else {
       this.setState({staketokendata: false})
-      window.alert('token to be staked not on this blockchain network')
+      window.alert('token  not on this blockchain network, please switch to ropsten')
     }
     const TokenFaucetData = TokenFaucet.networks[networkID]
     if (TokenFaucetData) {
@@ -53,7 +53,7 @@ class App extends Component {
       this.setState({tokenFaucet: tokenFaucet})
     } else {
       this.setState({tokenfaucetdata: false})
-      window.alert('Faucet not live on this blockchain')
+      window.alert('Faucet not live on this blockchain, please switch to ropsten')
     }
 
 
@@ -81,7 +81,7 @@ class App extends Component {
       window.web3 = new Web3(window.web3.currentProvider)
     }
     else {
-      window.alert('Non-Ethereum browser detected. You should consider trying Metamask!')
+      window.alert('Non-Ethereum browser detected. Install Metamask chrome extension and reload webpage!')
     }
   }
 
@@ -93,7 +93,7 @@ class App extends Component {
       })
     } 
     else{
-      window.alert('Token faucet not live on this blockchain. Please switch')
+      window.alert('Token faucet not live on this blockchain. Please switch to ropsten')
     }
   }
 
@@ -127,7 +127,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navbar account={this.state.account}> </Navbar>
+        <Navbar account={this.state.account}
+                StakeTokenBalance = {this.state.StakeTokenBalance}> </Navbar>
         <header className="App-header">
           <main role='main' className='col-lg-12 d-flex ml-auto mr-auto' style={{ maxWidth: '600px' }}></main>
           <a

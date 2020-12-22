@@ -33,6 +33,9 @@ class Navbar extends Component {
             }
 
           </li>
+          <span style = {{color: "white"}}>
+          {window.web3.utils.fromWei(this.props.StakeTokenBalance, 'Ether')} STK
+          </span>
         </ul>
         
       </nav> 
