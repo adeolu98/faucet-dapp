@@ -1,13 +1,13 @@
-pragma solidity 0.4.26;
+pragma solidity 0.8.0;
 import './IERC20.sol';
 
 contract TokenFaucet {
     IERC20 tokenAddress;
-    event transfer (address caller, uint amount);
+    event mint (address caller, uint amount);
  
 
-    // code will be deployed when the token address of token to be distributed by faucet is provided.
-    constructor(IERC20 _tokenAddress) public{
+
+    constructor(IERC20 _tokenAddress){
         tokenAddress = _tokenAddress;
     }
 
@@ -18,16 +18,16 @@ contract TokenFaucet {
         //get token bal of caller 
         uint callerTokenBal =  tokenAddress.balanceOf(msg.sender);
 
-        //calculate amount to be sent to caller
+        //calculate amount to be sent to caller, no one canhave more than 1000 tokens at a time 
         uint amountToBeClaimed = 1000* 10**18 - callerTokenBal;
 
-        //transfer 50 tokens to the function caller
-        tokenAddress.transfer( msg.sender, amountToBeClaimed);
-        emit transfer(msg.sender, amountToBeClaimed);
+        //mint tokens to the function caller
+        tokenAddress.mint( msg.sender, amountToBeClaimed);
+        emit mint(msg.sender, amountToBeClaimed);
 
     }
     
-    function getCallerTokenBal() public view returns(uint callerTokenBal){
-         callerTokenBal =  tokenAddress.balanceOf(msg.sender);
+    function getCallerTokenBal() public view returns(uint){
+         return tokenAddress.balanceOf(msg.sender);
     }
 }
