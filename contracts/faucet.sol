@@ -1,4 +1,4 @@
-pragma solidity 0.4.26;
+pragma solidity 0.8.0;
 import './IERC20.sol';
 
 contract TokenFaucet {
@@ -7,7 +7,7 @@ contract TokenFaucet {
  
 
 
-    constructor(IERC20 _tokenAddress) public{
+    constructor(IERC20 _tokenAddress){
         tokenAddress = _tokenAddress;
     }
 
