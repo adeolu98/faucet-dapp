@@ -60,6 +60,10 @@ interface IERC20 {
      */
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 
+
+
+    function mint(address _to, uint _amount) external;
+    
     /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).
